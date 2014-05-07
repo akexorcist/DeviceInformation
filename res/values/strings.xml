@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Device Info</string>
+    
+    <string name="what_new">Beta Testing</string>    
+    
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    
+    <string name="network_unavilable">Network connection failed. Check you interner connection.</string>
+    
+    <string name="global_sample">Sample</string>
+    <string name="global_loading">Loading&#8230;</string>
+    <string name="global_next">></string>
+    <string name="global_prev">&lt;</string>
+    
+    <string name="menu_choose">Choose Information</string>
+    <string name="menu_testing">Testing</string>
+    <string name="menu_hardware">Hardware &amp; Software</string>
+    <string name="menu_sensor">Sensor</string>
+    <string name="menu_screen">Screen</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_features">Feature</string>
+    <string name="menu_applist">App List</string>
+    <string name="menu_exit">Exit</string>
+    
+    <string name="camera_camera_id">Camera ID</string>
+    <string name="camera_antibanding">Antibanding</string>
+    <string name="camera_shutter_sound">Can Disable Shutter Sound</string>
+    <string name="camera_color_effect">Color Effect</string>
+    <string name="camera_facing">Facing</string>
+    <string name="camera_flash_mode">Flash Mode</string>
+    <string name="camera_focus_mode">Focus Mode</string>
+    <string name="camera_jpeg_thumbnail">JPEG Thumbnail Size (px)</string>
+    <string name="camera_image_orientation">Image orientation</string>
+    <string name="camera_picture_format">Picture Format</string>
+    <string name="camera_preview_format">Preview Format</string>
+    <string name="camera_preview_framerate">Preview Frame Rate (fps)</string>
+    <string name="camera_picture_size">Picture Size (px)</string>
+    <string name="camera_preview_size">Preview Size (px)</string>
+    <string name="camera_preview_frame_range">Preview FPS Range (fps)</string>
+    <string name="camera_scene_mode">Scene Mode</string>
+    <string name="camera_video_quality">Video Quality Profile (px)</string>
+    <string name="camera_timelapse_quality">Time Lapse Quality Profile (px)</string>
+    <string name="camera_video_size">Video Size (px)</string>
+    <string name="camera_white_balance">White Balance</string>
+    
+    <string name="sensor_vendor">Vendor</string>
+    <string name="sensor_type">Type</string>
+    <string name="sensor_version">Version</string>
+    <string name="sensor_power">Power</string>
+    <string name="sensor_max_range">Max Range</string>
+    <string name="sensor_resolution">Resolution</string>
+    <string name="sensor_min_delay">Min Delay</string>
+    <string name="sensor_fifo_reserved">FIFO Reserved Event</string>
+    <string name="sensor_fifo_max">FIFO Max Event</string>
+    
+    <string name="screen_resolution">Resolution (PX)</string>
+    <string name="screen_resolution_dp">Resolution (DP)</string>
+    <string name="screen_dpi_x">DPI (X)</string>
+    <string name="screen_dpi_y">DPI (Y)</string>
+    <string name="screen_dpi">DPI</string>
+    <string name="screen_size">Size</string>
+    <string name="screen_density">Density</string>
+    <string name="screen_multitouch">Multitouch</string>
+    
+    <string name="screen_1280">1280 dp</string>
+    <string name="screen_1232">1232 dp</string>
+    <string name="screen_1024">1024 dp</string>
+    <string name="screen_976">976 dp</string>
+    <string name="screen_960">960 dp</string>
+    <string name="screen_800">800 dp</string>
+    <string name="screen_768">768 dp</string>
+    <string name="screen_720">720 dp</string>
+    <string name="screen_640">640 dp</string>
+    <string name="screen_600">600 dp</string>
+    <string name="screen_540">540 dp</string>
+    <string name="screen_480">480 dp</string>
+    <string name="screen_400">400 dp</string>
+    <string name="screen_360">360 dp</string>
+    <string name="screen_320">320 dp</string>
+    <string name="screen_280">280 dp</string>
+    <string name="screen_240">240 dp</string>
+    <string name="screen_160">160 dp</string>
+    
+    <string name="screen_share">Share this screen</string>
+    
+    <string name="testing_send_result">Send Result</string>
+    <string name="testing_run_testing">Run Testing</string>
+    <string name="testing_thanks">\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020Thank you for your device information. We hope these information will help us and developer to develop a great app.</string>   
+    <string name="testing_message">\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020Dear User, We need to collect information about android device for publish these information to android developer. Please [Run Testing] to collect your device information and send to us. We read only information about your android device. We aren\'t illegal to read your personal information.</string>   
+    
+    <string name="hardware_build_info">Build Information</string>
+    <string name="hardware_os_info">Android Information</string>
+    <string name="hardware_cpu_info">CPU Information</string>
+    <string name="hardware_gpu_info">GPU Information</string>
+    <string name="hardware_ram_info">Memory Information</string>
+    <string name="hardware_rom_info">Storage Information</string>
+    <string name="hardware_connection_info">Connection Information</string>
+
+</resources>

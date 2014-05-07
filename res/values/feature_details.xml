@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="detail_app_widget" >API Level 18\nThe device supports app widgets.</string>
+    <string name="detail_audio_low_latency" >API Level 9\nThe audio pipeline of device is low-latency, more suitable for audio applications sensitive to delays or lag in sound input or output.</string>
+    <string name="detail_bluetooth" >API Level 8\nThe device is capable of communicating with other devices via Bluetooth.</string>
+    <string name="detail_bluetooth_low_energy" >API Level 18\nThe device is capable of communicating with other devices via Bluetooth Low Energy radio.</string>
+    <string name="detail_camera" >API Level 7\nThe device has a camera facing away from the screen.</string>
+    <string name="detail_camera_any" >API Level 17\nThe device has at least one camera pointing in some direction.</string>
+    <string name="detail_camera_autofocus" >API Level 7\nThe camera of device supports auto-focus.</string>
+    <string name="detail_camera_flash" >API Level 7\nThe camera of device supports flash.</string>
+    <string name="detail_camera_front" >API Level 9\nThe device has a front facing camera.</string>
+    <string name="detail_comsumer_ir" >API Level 19\nThe device is capable of communicating with consumer IR devices.</string>
+    <string name="detail_device_admin" >API Level 19\nThe device supports device policy enforcement via device admins.</string>
+    <string name="detail_faketouch" >API Level 11\nThe device does not have a touch screen, but does support touch emulation for basic events. For instance, the device might use a mouse or remote control to drive a cursor, and emulate basic touch pointer events like down, up, drag, etc. All devices that support android.hardware.touchscreen or a sub-feature are presumed to also support faketouch.</string>
+    <string name="detail_faketouch_multitouch_distinct" >API Level 13\nThe device does not have a touch screen, but does support touch emulation for basic events that supports distinct tracking of two or more fingers. This is an extension of FEATURE_FAKETOUCH for input devices with this capability. Note that unlike a distinct multitouch screen as defined by FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT, these kinds of input devices will not actually provide full two-finger gestures since the input is being transformed to cursor movement on the screen. That is, single finger gestures will move a cursor; two-finger swipes will result in single-finger touch events; other two-finger gestures will result in the corresponding two-finger touch event.</string>
+    <string name="detail_faketouch_multitouch_jazzhand" >API Level 13\nThe device does not have a touch screen, but does support touch emulation for basic events that supports tracking a hand of fingers (5 or more fingers) fully independently. This is an extension of FEATURE_FAKETOUCH for input devices with this capability. Note that unlike a multitouch screen as defined by FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND, not all two finger gestures can be detected due to the limitations described for FEATURE_FAKETOUCH_MULTITOUCH_DISTINCT.</string>
+    <string name="detail_home_screen" >API Level 18\nThe device supports a home screen that is replaceable by third party applications.</string>
+    <string name="detail_input_methods" >API Level 18\nThe device supports adding new input methods implemented with the InputMethodService API.</string>
+    <string name="detail_live_wallpaper" >API Level 7\nThe device supports live wallpapers.</string>
+    <string name="detail_location" >API Level 8\nThe device supports one or more methods of reporting current location.</string>
+    <string name="detail_location_gps" >API Level 8\nThe device has a Global Positioning System receiver and can report precise location.</string>
+    <string name="detail_location_network" >API Level 8\nThe device can report location with coarse accuracy using a network-based geolocation system.</string>
+    <string name="detail_microphone" >API Level 8\nThe device can record audio via a microphone.</string>
+    <string name="detail_nfc" >API Level 9\nThe device can communicate using Near-Field Communications (NFC).</string>
+    <string name="detail_nfc_host_card_emulation" >API Level 19\nThe device supports host- based NFC card emulation.</string>
+    <string name="detail_screen_landscape" >API Level 13\nThe device supports landscape orientation screens. For backwards compatibility, you can assume that if neither this nor FEATURE_SCREEN_PORTRAIT is set then the device supports both portrait and landscape.</string>
+    <string name="detail_screen_portrait" >API Level 13\nThe device supports portrait orientation screens. For backwards compatibility, you can assume that if neither this nor FEATURE_SCREEN_LANDSCAPE is set then the device supports both portrait and landscape.</string>
+    <string name="detail_sensor_accelerometer" >API Level 8\nThe device includes an accelerometer.</string>
+    <string name="detail_sensor_barometer" >API Level 9\nThe device includes a barometer (air pressure sensor.)</string>
+    <string name="detail_sensor_compass" >API Level 8\nThe device includes a magnetometer (compass).</string>
+    <string name="detail_sensor_gyroscope" >API Level 9\nThe device includes a gyroscope.</string>
+    <string name="detail_sensor_light" >API Level 7\nThe device includes a light sensor.</string>
+    <string name="detail_sensor_proximity" >API Level 7\nThe device includes a proximity sensor.</string>
+    <string name="detail_sensor_step_counter" >API Level 19\nThe device includes a hardware step counter.</string>
+    <string name="detail_sensor_step_detector" >API Level 19\nThe device includes a hardware step detector.</string>
+    <string name="detail_sip" >API Level 9\nThe SIP API is enabled on the device.</string>
+    <string name="detail_sip_voip" >API Level 9\nThe device supports SIP-based VOIP.</string>
+    <string name="detail_telephony" >API Level 7\nThe device has a telephony radio with data communication support.</string>
+    <string name="detail_telephony_cdma" >API Level 7\nThe device has a CDMA telephony stack.</string>
+    <string name="detail_telephony_gsm" >API Level 7\nThe device has a GSM telephony stack.</string>
+    <string name="detail_television" >API Level 16\nThis is a device dedicated to showing UI on a television. Television here is defined to be a typical living room television experience: displayed on a big screen, where the user is sitting far away from it, and the dominant form of input will be something like a DPAD, not through touch or mouse.</string>
+    <string name="detail_touchscreen" >API Level 8\nThe display of device has a touch screen.</string>
+    <string name="detail_touchscreen_multitouch" >API Level 7\nThe touch screen of device supports multitouch sufficient for basic two-finger gesture detection.</string>
+    <string name="detail_touchscreen_multitouch_distinct" >API Level 8\nThe touch screen of device is capable of tracking two or more fingers fully independently.</string>
+    <string name="detail_touchscreen_multitouch_jazzhand" >API Level 9\nThe touch screen of device is capable of tracking a full hand of fingers fully independently - that is, 5 or more simultaneous independent pointers.</string>
+    <string name="detail_usb_accessory" >API Level 12\nThe device supports connecting to USB accessories.</string>
+    <string name="detail_usb_host" >API Level 12\nThe device supports connecting to USB devices as the USB host.</string>
+    <string name="detail_wifi" >API Level 8\nThe device supports WiFi (802.11) networking.</string>
+    <string name="detail_wifi_direct" >API Level 14\nThe device supports Wi-Fi Direct networking.</string>
+    
+</resources>

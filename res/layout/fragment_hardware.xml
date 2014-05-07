@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg" >
+    
+    <ScrollView 
+	    android:id="@+id/scrollHardware"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_vertical_margin"
+	    android:scrollbars="none"
+	    android:overScrollMode="never" >
+	
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	
+	        <LinearLayout
+	            android:id="@+id/layoutBuild"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_build_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/layoutOS"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_os_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/layoutCPU"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_cpu_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/layoutGPU"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_gpu_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/layoutRam"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_ram_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	
+	            <android.opengl.GLSurfaceView 
+	                android:id="@+id/glSurfaceView"
+	                android:layout_width="match_parent"
+	                android:layout_height="1dp"
+	    			android:background="@color/global_bg" />
+	             
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/layoutRom"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_rom_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	                
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/layoutConnection"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		    	android:layout_marginTop="@dimen/hardware_text_margin"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+		    		android:layout_marginBottom="@dimen/hardware_text_margin"
+	                android:padding="@dimen/hardware_text_header_padding"
+	                android:background="@color/action_bar_bg"
+	                android:text="@string/hardware_connection_info"
+	                android:textSize="@dimen/global_text_header_size"
+	                android:textColor="@android:color/white" />
+	                
+	        </LinearLayout>
+	    </LinearLayout>
+	</ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/applist_text_margin"
+            android:text="@string/global_loading"
+		    android:textColor="@color/global_text"
+            android:textSize="@dimen/global_text_header_size" />
+    </LinearLayout>
+    
+</RelativeLayout>
+

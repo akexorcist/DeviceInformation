@@ -1,0 +1,620 @@
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollCamera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:overScrollMode="never"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <LinearLayout
+                android:id="@+id/layoutCameraId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_camera_id"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtCameraId"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutAntibanding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_antibanding"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtAntibanding"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutCanDisableShutterSound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_shutter_sound"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtCanDisableShutterSound"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutColorEffect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_color_effect"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtColorEffect"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutFacing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_facing"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtFacing"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutFlashMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_flash_mode"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtFlashMode"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutFocusMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_focus_mode"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtFocusMode"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutJpegThumbnailSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_jpeg_thumbnail"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtJpegThumbnailSize"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutOrientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_image_orientation"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtOrientation"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPictureFormat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_picture_format"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtPictureFormat"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPreviewFormat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_preview_format"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtPreviewFormat"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPreviewFrameRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_preview_framerate"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtPreviewFrameRate"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPictureSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_picture_size"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtPictureSize"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPreviewSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal|center_vertical" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_preview_size"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtPreviewSize"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPreviewFpsRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_preview_frame_range"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtPreviewFpsRange"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutSceneMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_scene_mode"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtSceneMode"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutQualityProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_video_quality"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtQualityProfile"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutTimelapseQualityProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_timelapse_quality"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtTimelapseQualityProfile"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutVideoSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_video_size"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtVideoSize"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutWhiteBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_white_balance"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtWhiteBalance"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>

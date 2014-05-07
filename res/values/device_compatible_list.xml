@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="device_not_supported_bluetooth" >
+        <item>SP0718</item>
+    </string-array>
+    
+    <string-array name="device_supported_sd" >
+        <item>C6603</item>
+        <item>C6602</item>
+    </string-array>
+    
+    <string-array name="device_not_supported_sd" />
+    
+    <string-array name="device_support_dual_sim" />
+    
+</resources>

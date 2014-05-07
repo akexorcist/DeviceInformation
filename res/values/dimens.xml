@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--
+         Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html
+    -->
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    
+    <dimen name="global_text_sub_size">10dp</dimen>
+    <dimen name="global_text_size">15dp</dimen>
+    <dimen name="global_text_header_size">18dp</dimen>
+    
+    <dimen name="global_row_layout_width">120dp</dimen>
+    
+    <dimen name="global_page_changer">60sp</dimen>
+    
+    <dimen name="screen_title_margin">10dp</dimen>
+    <dimen name="screen_data_margin">5dp</dimen>
+    <dimen name="screen_data_padding">20dp</dimen>
+    
+    <dimen name="screen_measure_size">16dp</dimen>
+    <dimen name="screen_measure_margin">1dp</dimen>
+    <dimen name="screen_measure_share_button_padding">20dp</dimen>
+    
+    <dimen name="testing_button_padding">20dp</dimen>
+    <dimen name="testing_text_detail_margin">20dp</dimen>
+    <dimen name="testing_padding">40dp</dimen>
+    
+    <dimen name="applist_text_margin">10dp</dimen>
+    <dimen name="applist_list_view_margin">10dp</dimen>
+    <dimen name="applist_row_text_margin">10dp</dimen>
+    <dimen name="applist_row_icon_size">60dp</dimen>
+    <dimen name="applist_row_icon_margin">10dp</dimen>
+    <dimen name="applist_row_layout_margin">5dp</dimen>
+    
+    <dimen name="sensor_row_data_margin">5dp</dimen>
+    <dimen name="sensor_row_layout_padding">30dp</dimen>
+    <dimen name="sensor_row_layout_margin">30dp</dimen>
+    <dimen name="sensor_row_scroll_padding">10dp</dimen>
+    
+    <dimen name="feature_row_margin">5dp</dimen>
+    <dimen name="feature_row_padding">10dp</dimen>
+    
+    <dimen name="camera_text_margin">10dp</dimen>
+    <dimen name="camera_row_layout_margin">30dp</dimen>
+    
+    <dimen name="hardware_text_header_padding">10dp</dimen>
+    <dimen name="hardware_text_padding">5dp</dimen>
+    <dimen name="hardware_text_margin">10dp</dimen>
+    
+    <dimen name="dialog_text_major_margin">10dp</dimen>
+    <dimen name="dialog_text_minor_margin">5dp</dimen>
+    <dimen name="dialog_padding">10dp</dimen>
+    
+    <dimen name="dialog_sensor_width">260dp</dimen>
+    <dimen name="dialog_sensor_padding">20dp</dimen>
+    <dimen name="dialog_sensor_text_width">120dp</dimen>   
+    
+    <dimen name="dialog_loading_width">240dp</dimen>  
+    <dimen name="dialog_loading_height">180dp</dimen>    
+    
+</resources>
