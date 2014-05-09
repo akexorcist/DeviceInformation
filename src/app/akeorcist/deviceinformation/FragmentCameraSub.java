@@ -146,7 +146,7 @@ public class FragmentCameraSub extends Fragment {
 		txtQualityProfile.setText(str);
 
 		str = InfoManager.CameraInfo.getQualityTimeLapseProfile(cameraParams, cameraId);
-		txtQualityProfile.setText(str);
+		txtTimelapseQualityProfile.setText(str);
 		
 		str = InfoManager.CameraInfo.getSupportedSceneModes(cameraParams);
 		txtSceneMode.setText(str);
