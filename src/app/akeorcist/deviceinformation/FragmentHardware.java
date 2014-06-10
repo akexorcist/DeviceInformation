@@ -120,6 +120,7 @@ public class FragmentHardware extends Fragment {
 		    	    final ArrayList<String> arrComm = new ArrayList<String>();
 		    	    arrComm.add("Telephony : " + HardwareInfo.hasTelephony(getActivity()));
 		    	    arrComm.add("Cellular : " + HardwareInfo.hasCellular(getActivity()));
+		    	    arrComm.add("GPS : " + HardwareInfo.hasGps(getActivity()));
 		    	    arrComm.add("Bluetooth : " + HardwareInfo.hasBluetooth(getActivity()));
 		    	    arrComm.add("WiFi : " + HardwareInfo.hasWiFi(getActivity()));
 		    	    arrComm.add("WiFi Direct : " + HardwareInfo.hasWiFiDirect(getActivity()));

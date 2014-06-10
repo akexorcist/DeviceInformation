@@ -10,6 +10,10 @@
     
     <string name="network_unavilable">Network connection failed. Check you interner connection.</string>
     
+    <string name="whatsnew_title">What\'s New in 1.3.0</string>
+    <string name="whatsnew_message">• Add new information about camera\n• You need to run testing again to update new information to our server</string>
+    <string name="whatsnew_ok">OK</string>
+    
     <string name="global_sample">Sample</string>
     <string name="global_loading">Loading&#8230;</string>
     <string name="global_next">></string>
@@ -45,6 +49,12 @@
     <string name="camera_timelapse_quality">Time Lapse Quality Profile (px)</string>
     <string name="camera_video_size">Video Size (px)</string>
     <string name="camera_white_balance">White Balance</string>
+    <string name="camera_auto_exposure_lock">Auto Exposure Lock Supported</string>
+    <string name="camera_auto_white_balance_lock">Auto White Balance Lock Supported</string>
+    <string name="camera_auto_smooth_zoom">Smooth Zoom Supported</string>
+    <string name="camera_video_snapshot">Video Snapshot Supported</string>
+    <string name="camera_video_stabilization">Video Stabilization Supported</string>
+    <string name="camera_zoom">Zoom Supported</string>
     
     <string name="sensor_vendor">Vendor</string>
     <string name="sensor_type">Type</string>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg" >
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_whatsnew_margin"
+        android:text="@string/whatsnew_title"
+        android:textSize="@dimen/global_text_header_size"
+        android:textColor="@color/global_text_header" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_whatsnew_margin"
+        android:layout_marginRight="@dimen/dialog_whatsnew_margin"
+        android:layout_marginLeft="@dimen/dialog_whatsnew_margin"
+        android:text="@string/whatsnew_message"
+        android:textSize="@dimen/global_text_size"
+        android:textColor="@color/global_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/whatsnew_line_margin"
+        android:background="@color/global_text_header" />
+
+    <TextView
+        android:id="@+id/textWhatnewOK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/selector_whatnew_ok"
+        android:gravity="center"
+        android:padding="@dimen/whatsnew_ok_padding"
+        android:text="@string/whatsnew_ok"
+        android:textColor="@color/global_text_header"
+        android:textSize="@dimen/global_text_header_size" />
+
+</LinearLayout>

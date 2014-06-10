@@ -15,9 +15,14 @@
     <dimen name="global_text_size">15dp</dimen>
     <dimen name="global_text_header_size">18dp</dimen>
     
+    <dimen name="dialog_whatsnew_margin">20dp</dimen>
+    
     <dimen name="global_row_layout_width">120dp</dimen>
     
-    <dimen name="global_page_changer">60sp</dimen>
+    <dimen name="global_page_changer">60dp</dimen>
+    
+    <dimen name="whatsnew_ok_padding">16dp</dimen>
+    <dimen name="whatsnew_line_margin">10dp</dimen>
     
     <dimen name="screen_title_margin">10dp</dimen>
     <dimen name="screen_data_margin">5dp</dimen>

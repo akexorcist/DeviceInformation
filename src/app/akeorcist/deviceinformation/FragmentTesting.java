@@ -61,6 +61,7 @@ import app.akeorcist.deviceinformation.InfoManager.CameraInfo;
 
 public class FragmentTesting extends Fragment {	
 	private final String PREFERENCE_NAME = "Preference";
+	private final String KEYWORD_NAME = "hasRunTesting130";
 	
 	TextView textTesting;
 	Button buttonRunTesting;
@@ -105,7 +106,7 @@ public class FragmentTesting extends Fragment {
 		});
         
 		SharedPreferences settings = getActivity().getSharedPreferences(PREFERENCE_NAME, 0);
-	    boolean hasRunTesting = settings.getBoolean("hasRunTesting", false);
+	    boolean hasRunTesting = settings.getBoolean(KEYWORD_NAME, false);
 	    if(hasRunTesting) {
 	    	textTesting.setText(R.string.testing_thanks);
 	    	buttonRunTesting.setVisibility(View.GONE);
@@ -243,6 +244,7 @@ public class FragmentTesting extends Fragment {
 			
 						strWrite += "Telephony : " + HardwareInfo.hasTelephony(getActivity()) + "\n";
 						strWrite += "Cellular : " + HardwareInfo.hasCellular(getActivity()) + "\n";
+						strWrite += "GPS : " + HardwareInfo.hasGps(getActivity()) + "\n";
 						strWrite += "Bluetooth : " + HardwareInfo.hasBluetooth(getActivity()) + "\n";
 						strWrite += "WiFi : " + HardwareInfo.hasWiFi(getActivity()) + "\n";
 						strWrite += "WiFi Direct : " + HardwareInfo.hasWiFiDirect(getActivity()) + "\n";
@@ -338,7 +340,15 @@ public class FragmentTesting extends Fragment {
 								strWrite += "Video Quality : " + CameraInfo.getQualityProfile(params, i) + "\n";
 								strWrite += "Time Lapse Quality : " + CameraInfo.getQualityTimeLapseProfile(params, i) + "\n";
 								strWrite += "Video Size : " + CameraInfo.getSupportedVideoSizes(params) + "\n";
-								strWrite += "White Balance : " + CameraInfo.getSupportedWhiteBalance(params);
+								strWrite += "White Balance : " + CameraInfo.getSupportedWhiteBalance(params) + "\n";
+								
+								strWrite += "Auto Exposure Lock : " + CameraInfo.isAutoExposureLockSupported(params) + "\n";
+								strWrite += "Auto White Balance Lock : " + CameraInfo.isAutoWhiteBalanceLockSupported(params) + "\n";
+								strWrite += "Smooth Zoom : " + CameraInfo.isSmoothZoomSupported(params) + "\n";
+								strWrite += "Video Snapshot : " + CameraInfo.isVideoSnapshotSupported(params) + "\n";
+								strWrite += "Video Stabilization : " + CameraInfo.isVideoStabilizationSupported(params) + "\n";
+								strWrite += "Zoom : " + CameraInfo.isZoomSupported(params);
+								
 							} else {
 								Camera mCamera = Camera.open();
 								Camera.Parameters params = mCamera.getParameters();
@@ -362,7 +372,14 @@ public class FragmentTesting extends Fragment {
 								strWrite += "Video Quality : " + CameraInfo.getQualityProfile(params, i) + "\n";
 								strWrite += "Time Lapse Quality : " + CameraInfo.getQualityTimeLapseProfile(params, i) + "\n";
 								strWrite += "Video Size : " + CameraInfo.getSupportedVideoSizes(params) + "\n";
-								strWrite += "White Balance : " + CameraInfo.getSupportedWhiteBalance(params);
+								strWrite += "White Balance : " + CameraInfo.getSupportedWhiteBalance(params) + "\n";
+								
+								strWrite += "Auto Exposure Lock : " + CameraInfo.isAutoExposureLockSupported(params) + "\n";
+								strWrite += "Auto White Balance Lock : " + CameraInfo.isAutoWhiteBalanceLockSupported(params) + "\n";
+								strWrite += "Smooth Zoom : " + CameraInfo.isSmoothZoomSupported(params) + "\n";
+								strWrite += "Video Snapshot : " + CameraInfo.isVideoSnapshotSupported(params) + "\n";
+								strWrite += "Video Stabilization : " + CameraInfo.isVideoStabilizationSupported(params) + "\n";
+								strWrite += "Zoom : " + CameraInfo.isZoomSupported(params);
 							}
 			    			if(i < cameraCount - 1)
 			    				strWrite += "\n***********\n";
@@ -459,25 +476,26 @@ public class FragmentTesting extends Fragment {
 			    		params = new ArrayList<NameValuePair>();
 			            params.add(new BasicNameValuePair("_id", strWrite));
 			            params.add(new BasicNameValuePair("board", arr.get(0)));
-			            params.add(new BasicNameValuePair("brand", arr.get(1)));
-			            params.add(new BasicNameValuePair("characteristic", arr.get(2)));
-			            params.add(new BasicNameValuePair("cpu_abi", arr.get(3)));
-			            params.add(new BasicNameValuePair("cpu_abi2", arr.get(4)));
-			            params.add(new BasicNameValuePair("device", arr.get(5)));
-			            params.add(new BasicNameValuePair("display", arr.get(6)));
-			            params.add(new BasicNameValuePair("fingerprint", arr.get(7)));
-			            params.add(new BasicNameValuePair("hardware", arr.get(8)));
-			            params.add(new BasicNameValuePair("host", arr.get(9)));
-			            params.add(new BasicNameValuePair("id", arr.get(10)));
-			            params.add(new BasicNameValuePair("manufacturer", arr.get(11)));
-			            params.add(new BasicNameValuePair("model", arr.get(12)));
-			            params.add(new BasicNameValuePair("product", arr.get(13)));
-			            params.add(new BasicNameValuePair("radio", arr.get(14)));
-			            params.add(new BasicNameValuePair("serial", arr.get(15)));
-			            params.add(new BasicNameValuePair("tags", arr.get(16)));
-			            params.add(new BasicNameValuePair("time", arr.get(17)));
-			            params.add(new BasicNameValuePair("type", arr.get(18)));
-			            params.add(new BasicNameValuePair("user", arr.get(19)));
+			            params.add(new BasicNameValuePair("bootloader", arr.get(1)));
+			            params.add(new BasicNameValuePair("brand", arr.get(2)));
+			            params.add(new BasicNameValuePair("characteristic", arr.get(3)));
+			            params.add(new BasicNameValuePair("cpu_abi", arr.get(4)));
+			            params.add(new BasicNameValuePair("cpu_abi2", arr.get(5)));
+			            params.add(new BasicNameValuePair("device", arr.get(6)));
+			            params.add(new BasicNameValuePair("display", arr.get(7)));
+			            params.add(new BasicNameValuePair("fingerprint", arr.get(8)));
+			            params.add(new BasicNameValuePair("hardware", arr.get(9)));
+			            params.add(new BasicNameValuePair("host", arr.get(10)));
+			            params.add(new BasicNameValuePair("id", arr.get(11)));
+			            params.add(new BasicNameValuePair("manufacturer", arr.get(12)));
+			            params.add(new BasicNameValuePair("model", arr.get(13)));
+			            params.add(new BasicNameValuePair("product", arr.get(14)));
+			            params.add(new BasicNameValuePair("radio", arr.get(15)));
+			            params.add(new BasicNameValuePair("serial", arr.get(16)));
+			            params.add(new BasicNameValuePair("tags", arr.get(17)));
+			            params.add(new BasicNameValuePair("time", arr.get(18)));
+			            params.add(new BasicNameValuePair("type", arr.get(19)));
+			            params.add(new BasicNameValuePair("user", arr.get(20)));
 			
 			    		onProgressUpdate("Send build info");
 			    		
@@ -491,29 +509,38 @@ public class FragmentTesting extends Fragment {
 				
 				    	onProgressUpdate("Send camera info");
 			    		
-			    		for(int i = 0 ; i < arr.size() / 20 ; i++) {
+				    	int cam_param_count = 26;
+				    	
+			    		for(int i = 0 ; i < arr.size() / cam_param_count ; i++) {
 				    		params = new ArrayList<NameValuePair>();
 				            params.add(new BasicNameValuePair("_id", strWrite));
 				            params.add(new BasicNameValuePair("camera_id", "" + i));
-				            params.add(new BasicNameValuePair("antibanding", arr.get((i * 20) + 1)));
-				            params.add(new BasicNameValuePair("shutter_sound", arr.get((i * 20) + 2)));
-				            params.add(new BasicNameValuePair("color_effect", arr.get((i * 20) + 3)));
-				            params.add(new BasicNameValuePair("facing", arr.get((i * 20) + 4)));
-				            params.add(new BasicNameValuePair("flash_mode", arr.get((i * 20) + 5)));
-				            params.add(new BasicNameValuePair("focus_mode", arr.get((i * 20) + 6)));
-				            params.add(new BasicNameValuePair("jpeg_thumbnail", arr.get((i * 20) + 7)));
-				            params.add(new BasicNameValuePair("image_orientation", arr.get((i * 20) + 8)));
-				            params.add(new BasicNameValuePair("picture_format", arr.get((i * 20) + 9)));
-				            params.add(new BasicNameValuePair("preview_format", arr.get((i * 20) + 10)));
-				            params.add(new BasicNameValuePair("preview_framerate", arr.get((i * 20) + 11)));
-				            params.add(new BasicNameValuePair("picture_size", arr.get((i * 20) + 12)));
-				            params.add(new BasicNameValuePair("preview_size", arr.get((i * 20) + 13)));
-				            params.add(new BasicNameValuePair("preview_fps_range", arr.get((i * 20) + 14)));
-				            params.add(new BasicNameValuePair("scene_mode", arr.get((i * 20) + 15)));
-				            params.add(new BasicNameValuePair("video_quality", arr.get((i * 20) + 16)));
-				            params.add(new BasicNameValuePair("timelapse_quality", arr.get((i * 20) + 17)));
-				            params.add(new BasicNameValuePair("video_size", arr.get((i * 20) + 18)));
-				            params.add(new BasicNameValuePair("white_balance", arr.get((i * 20) + 19)));
+				            params.add(new BasicNameValuePair("antibanding", arr.get((i * cam_param_count) + 1)));
+				            params.add(new BasicNameValuePair("shutter_sound", arr.get((i * cam_param_count) + 2)));
+				            params.add(new BasicNameValuePair("color_effect", arr.get((i * cam_param_count) + 3)));
+				            params.add(new BasicNameValuePair("facing", arr.get((i * cam_param_count) + 4)));
+				            params.add(new BasicNameValuePair("flash_mode", arr.get((i * cam_param_count) + 5)));
+				            params.add(new BasicNameValuePair("focus_mode", arr.get((i * cam_param_count) + 6)));
+				            params.add(new BasicNameValuePair("jpeg_thumbnail", arr.get((i * cam_param_count) + 7)));
+				            params.add(new BasicNameValuePair("image_orientation", arr.get((i * cam_param_count) + 8)));
+				            params.add(new BasicNameValuePair("picture_format", arr.get((i * cam_param_count) + 9)));
+				            params.add(new BasicNameValuePair("preview_format", arr.get((i * cam_param_count) + 10)));
+				            params.add(new BasicNameValuePair("preview_framerate", arr.get((i * cam_param_count) + 11)));
+				            params.add(new BasicNameValuePair("picture_size", arr.get((i * cam_param_count) + 12)));
+				            params.add(new BasicNameValuePair("preview_size", arr.get((i * cam_param_count) + 13)));
+				            params.add(new BasicNameValuePair("preview_fps_range", arr.get((i * cam_param_count) + 14)));
+				            params.add(new BasicNameValuePair("scene_mode", arr.get((i * cam_param_count) + 15)));
+				            params.add(new BasicNameValuePair("video_quality", arr.get((i * cam_param_count) + 16)));
+				            params.add(new BasicNameValuePair("timelapse_quality", arr.get((i * cam_param_count) + 17)));
+				            params.add(new BasicNameValuePair("video_size", arr.get((i * cam_param_count) + 18)));
+				            params.add(new BasicNameValuePair("white_balance", arr.get((i * cam_param_count) + 19)));
+
+				            params.add(new BasicNameValuePair("auto_exposure_lock", arr.get((i * cam_param_count) + 20)));
+				            params.add(new BasicNameValuePair("auto_white_balance_lock", arr.get((i * cam_param_count) + 21)));
+				            params.add(new BasicNameValuePair("auto_smooth_zoom", arr.get((i * cam_param_count) + 22)));
+				            params.add(new BasicNameValuePair("video_snapshot", arr.get((i * cam_param_count) + 23)));
+				            params.add(new BasicNameValuePair("video_stabilization", arr.get((i * cam_param_count) + 24)));
+				            params.add(new BasicNameValuePair("zoom", arr.get((i * cam_param_count) + 25)));
 				    		
 				    		getHttpPost(url, params);
 			    		}
@@ -549,13 +576,14 @@ public class FragmentTesting extends Fragment {
 			            params.add(new BasicNameValuePair("_id", strWrite));
 			            params.add(new BasicNameValuePair("telephony", arr.get(0)));
 			            params.add(new BasicNameValuePair("cellular", arr.get(1)));
-			            params.add(new BasicNameValuePair("bluetooth", arr.get(2)));
-			            params.add(new BasicNameValuePair("wifi", arr.get(3)));
-			            params.add(new BasicNameValuePair("wifi_direct", arr.get(4)));
-			            params.add(new BasicNameValuePair("usb_otg", arr.get(5)));
-			            params.add(new BasicNameValuePair("usb_accessory", arr.get(6)));
-			            params.add(new BasicNameValuePair("nfc", arr.get(7)));
-			            params.add(new BasicNameValuePair("nfc_hce", arr.get(8)));
+			            params.add(new BasicNameValuePair("gps", arr.get(2)));
+			            params.add(new BasicNameValuePair("bluetooth", arr.get(3)));
+			            params.add(new BasicNameValuePair("wifi", arr.get(4)));
+			            params.add(new BasicNameValuePair("wifi_direct", arr.get(5)));
+			            params.add(new BasicNameValuePair("usb_otg", arr.get(6)));
+			            params.add(new BasicNameValuePair("usb_accessory", arr.get(7)));
+			            params.add(new BasicNameValuePair("nfc", arr.get(8)));
+			            params.add(new BasicNameValuePair("nfc_hce", arr.get(9)));
 			
 			    		onProgressUpdate("Send connection info");
 			    		
@@ -760,7 +788,7 @@ public class FragmentTesting extends Fragment {
 	
 						SharedPreferences settings = getActivity().getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
 						SharedPreferences.Editor editor = settings.edit();
-						editor.putBoolean("hasRunTesting", true);
+						editor.putBoolean(KEYWORD_NAME, true);
 						editor.commit();
 	
 				    	textTesting.setText(R.string.testing_thanks);

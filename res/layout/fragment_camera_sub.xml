@@ -615,6 +615,183 @@
                     android:textColor="@color/global_text"
                     android:textSize="@dimen/global_text_size" />
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutAutoExposureLock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_auto_exposure_lock"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtAutoExposureLock"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutAutoWhiteBalanceLock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_auto_white_balance_lock"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtAutoWhiteBalanceLock"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutSmoothZoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_auto_smooth_zoom"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtSmoothZoom"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutVideoSnapshot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_video_snapshot"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtVideoSnapshot"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutVideoStabilization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_sub_row"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_video_stabilization"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtVideoStabilization"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutZoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="right"
+                    android:text="@string/camera_zoom"
+                    android:textColor="@color/global_text_header"
+                    android:textSize="@dimen/global_text_size" />
+
+                <TextView
+                    android:id="@+id/txtZoom"
+                    android:layout_width="@dimen/global_row_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/global_sample"
+                    android:textColor="@color/global_text"
+                    android:textSize="@dimen/global_text_size" />
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

@@ -18,6 +18,7 @@ import android.graphics.ImageFormat;
 import android.hardware.Camera;
 import android.hardware.Sensor;
 import android.hardware.Camera.Parameters;
+import android.location.LocationManager;
 import android.media.CamcorderProfile;
 import android.net.ConnectivityManager;
 import android.os.Build;
@@ -170,6 +171,17 @@ public class InfoManager {
 			try {
 				manager.getNetworkInfo(1).getState();
 				return "yes";
+			} catch (NullPointerException e) {
+				e.printStackTrace();
+			}
+			return "no";
+		}
+		
+		public static String hasGps(Activity activity) {
+			LocationManager manager = (LocationManager)activity.getSystemService(Context.LOCATION_SERVICE);
+			try {
+				if(manager.isProviderEnabled(LocationManager.GPS_PROVIDER))
+					return "yes";
 			} catch (NullPointerException e) {
 				e.printStackTrace();
 			}
@@ -682,9 +694,68 @@ public class InfoManager {
 		}	
 	}
 
-	public static class CameraInfo {
-		@SuppressLint("NewApi")
-				
+	@SuppressLint("NewApi")
+	public static class CameraInfo {		
+		public static String isAutoExposureLockSupported(Parameters params) {
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+				if(params.isAutoExposureLockSupported()) {
+					return "yes";
+				} else {
+					return "no";
+				}
+			}
+			return "null";
+		}		
+		
+		public static String isAutoWhiteBalanceLockSupported(Parameters params) {
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+				if(params.isAutoWhiteBalanceLockSupported()) {
+					return "yes";
+				} else {
+					return "no";
+				}
+			}
+			return "null";
+		}		
+		
+		public static String isSmoothZoomSupported(Parameters params) {
+			if(params.isSmoothZoomSupported()) {
+				return "yes";
+			} else {
+				return "no";
+			}
+		}		
+		
+		public static String isVideoSnapshotSupported(Parameters params) {
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+				if(params.isVideoSnapshotSupported()) {
+					return "yes";
+				} else {
+					return "no";
+				}
+			}
+			return "null";
+		}		
+		
+		public static String isVideoStabilizationSupported(Parameters params) {
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
+				if(params.isVideoStabilizationSupported()) {
+					return "yes";
+				} else {
+					return "no";
+				}
+			}
+			return "null";
+		}		
+		
+		public static String isZoomSupported(Parameters params) {
+			if(params.isZoomSupported()) {
+				return "yes";
+			} else {
+				return "no";
+			}
+		}		
+		
 		public static String getSupportedAntibanding(Parameters params) {
 			String str = "";
 			List<String> antibanding = params.getSupportedAntibanding();

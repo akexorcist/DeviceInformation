@@ -21,7 +21,9 @@ public class FragmentCameraSub extends Fragment {
 			, txtFacing, txtFlashMode, txtFocusMode, txtJpegThumbnailSize
 			, txtPictureFormat, txtOrientation, txtPreviewFormat, txtPreviewFrameRate
 			, txtPictureSize, txtPreviewSize, txtPreviewFpsRange, txtQualityProfile
-			, txtTimelapseQualityProfile, txtSceneMode, txtVideoSize, txtWhiteBalance;
+			, txtTimelapseQualityProfile, txtSceneMode, txtVideoSize, txtWhiteBalance
+			, txtAutoExposureLock, txtAutoWhiteBalanceLock, txtSmoothZoom
+			, txtVideoSnapshot, txtVideoStabilization, txtZoom;
 		
 	ScrollView scrollCamera;
 	
@@ -69,6 +71,12 @@ public class FragmentCameraSub extends Fragment {
 		txtSceneMode = (TextView)rootView.findViewById(R.id.txtSceneMode);
 		txtVideoSize = (TextView)rootView.findViewById(R.id.txtVideoSize);
 		txtWhiteBalance = (TextView)rootView.findViewById(R.id.txtWhiteBalance);
+		txtAutoExposureLock = (TextView)rootView.findViewById(R.id.txtAutoExposureLock);
+		txtAutoWhiteBalanceLock = (TextView)rootView.findViewById(R.id.txtAutoWhiteBalanceLock);
+		txtSmoothZoom = (TextView)rootView.findViewById(R.id.txtSmoothZoom);
+		txtVideoSnapshot = (TextView)rootView.findViewById(R.id.txtVideoSnapshot);
+		txtVideoStabilization = (TextView)rootView.findViewById(R.id.txtVideoStabilization);
+		txtZoom = (TextView)rootView.findViewById(R.id.txtZoom);
 		
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
 			Camera mCamera = Camera.open(cameraId);
@@ -156,6 +164,24 @@ public class FragmentCameraSub extends Fragment {
 		
 		str = InfoManager.CameraInfo.getSupportedWhiteBalance(cameraParams);
 		txtWhiteBalance.setText(str);
+		
+		str = InfoManager.CameraInfo.isAutoExposureLockSupported(cameraParams);
+		txtAutoExposureLock.setText(str);
+		
+		str = InfoManager.CameraInfo.isAutoWhiteBalanceLockSupported(cameraParams);
+		txtAutoWhiteBalanceLock.setText(str);
+		
+		str = InfoManager.CameraInfo.isSmoothZoomSupported(cameraParams);
+		txtSmoothZoom.setText(str);
+		
+		str = InfoManager.CameraInfo.isVideoSnapshotSupported(cameraParams);
+		txtVideoSnapshot.setText(str);
+		
+		str = InfoManager.CameraInfo.isVideoStabilizationSupported(cameraParams);
+		txtVideoStabilization.setText(str);
+		
+		str = InfoManager.CameraInfo.isZoomSupported(cameraParams);
+		txtZoom.setText(str);
 				
 		return rootView;
 	}

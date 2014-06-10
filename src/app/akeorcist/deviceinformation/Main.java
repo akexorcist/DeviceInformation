@@ -5,16 +5,28 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnDismissListener;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.TextView;
 import android.support.v4.widget.DrawerLayout;
 
 public class Main extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+	private final String PREFERENCE_NAME = "Preference";
+	private final String KEYWORD_NAME = "isFirstRun130";
+	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
 	private CharSequence mTitle;
@@ -29,6 +41,32 @@ public class Main extends ActionBarActivity implements
 		String strColor = getResources().getString(R.color.action_bar_bg);
         ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor(strColor)));
 		
+        SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, 0);
+	    boolean isFirstRun = settings.getBoolean(KEYWORD_NAME, true);
+	    if(isFirstRun) {
+	    	final Dialog dialog = new Dialog(Main.this);
+	        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        dialog.setContentView(R.layout.dialog_whatsnew);
+	        dialog.setCancelable(false);
+	        dialog.setOnDismissListener(new OnDismissListener() {
+				public void onDismiss(DialogInterface dialog) {
+					SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+					SharedPreferences.Editor editor = settings.edit();
+					editor.putBoolean(KEYWORD_NAME, false);
+					editor.commit();
+				}
+			});
+	        
+	        TextView textWhatnewOK = (TextView)dialog.findViewById(R.id.textWhatnewOK);
+	        textWhatnewOK.setOnClickListener(new OnClickListener() {
+	        	public void onClick(View v) {
+	        		dialog.dismiss();
+	        	}
+	        });
+	        
+			dialog.show();
+	    }
+        
 		mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager()
 				.findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
@@ -42,6 +80,10 @@ public class Main extends ActionBarActivity implements
 		onSectionAttached(0);
 		
 		mNavigationDrawerFragment.showNavigationDrawer();  
+		 
+
+		
+	    
 	}
 
 	@SuppressLint("InlinedApi")
