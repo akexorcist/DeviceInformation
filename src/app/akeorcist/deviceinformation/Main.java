@@ -40,32 +40,35 @@ public class Main extends ActionBarActivity implements
 		ActionBar ab = getSupportActionBar();
 		String strColor = getResources().getString(R.color.action_bar_bg);
         ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor(strColor)));
-		
-        SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, 0);
-	    boolean isFirstRun = settings.getBoolean(KEYWORD_NAME, true);
-	    if(isFirstRun) {
-	    	final Dialog dialog = new Dialog(Main.this);
-	        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	        dialog.setContentView(R.layout.dialog_whatsnew);
-	        dialog.setCancelable(false);
-	        dialog.setOnDismissListener(new OnDismissListener() {
-				public void onDismiss(DialogInterface dialog) {
-					SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-					SharedPreferences.Editor editor = settings.edit();
-					editor.putBoolean(KEYWORD_NAME, false);
-					editor.commit();
-				}
-			});
-	        
-	        TextView textWhatnewOK = (TextView)dialog.findViewById(R.id.textWhatnewOK);
-	        textWhatnewOK.setOnClickListener(new OnClickListener() {
-	        	public void onClick(View v) {
-	        		dialog.dismiss();
-	        	}
-	        });
-	        
-			dialog.show();
-	    }
+
+		String model = android.os.Build.MODEL;
+        if(!model.contains("Nokia_X") || !model.contains("Nokia_XL")) {
+	        SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, 0);
+		    boolean isFirstRun = settings.getBoolean(KEYWORD_NAME, true);
+		    if(isFirstRun) {
+		    	final Dialog dialog = new Dialog(Main.this);
+		        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		        dialog.setContentView(R.layout.dialog_whatsnew);
+		        dialog.setCancelable(false);
+		        dialog.setOnDismissListener(new OnDismissListener() {
+					public void onDismiss(DialogInterface dialog) {
+						SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
+						SharedPreferences.Editor editor = settings.edit();
+						editor.putBoolean(KEYWORD_NAME, false);
+						editor.commit();
+					}
+				});
+		        
+		        TextView textWhatnewOK = (TextView)dialog.findViewById(R.id.textWhatnewOK);
+		        textWhatnewOK.setOnClickListener(new OnClickListener() {
+		        	public void onClick(View v) {
+		        		dialog.dismiss();
+		        	}
+		        });
+		        
+				dialog.show();
+		    }
+        }
         
 		mNavigationDrawerFragment = (NavigationDrawerFragment)getSupportFragmentManager()
 				.findFragmentById(R.id.navigation_drawer);
@@ -73,10 +76,16 @@ public class Main extends ActionBarActivity implements
 
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
-		
-		Fragment fragment = FragmentTesting.newInstance();
-		FragmentManager fragmentManager = getSupportFragmentManager();
-		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+
+        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+        	Fragment fragment = FragmentHardware.newInstance();
+    		FragmentManager fragmentManager = getSupportFragmentManager();
+    		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        } else {
+        	Fragment fragment = FragmentTesting.newInstance();
+    		FragmentManager fragmentManager = getSupportFragmentManager();
+    		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+        }
 		onSectionAttached(0);
 		
 		mNavigationDrawerFragment.showNavigationDrawer();  
@@ -90,46 +99,88 @@ public class Main extends ActionBarActivity implements
 	public void onNavigationDrawerItemSelected(int position) {
 		Fragment fragment = null;
 		if(current_position != position) {
-			if(position != 7) {
-				if(position == 0) {
-					fragment = FragmentTesting.newInstance();
-				} else if(position == 1) {
-					fragment = FragmentHardware.newInstance();
-				} else if(position == 2) {
-					fragment = FragmentSensor.newInstance();
-				} else if(position == 3) {
-					fragment = FragmentScreen.newInstance();
-				} else if(position == 4) {
-					fragment = FragmentCamera.newInstance();
-				} else if(position == 5) {
-					fragment = FragmentFeature.newInstance();
-				} else if(position == 6) {
-					fragment = FragmentAppList.newInstance();
+			String model = android.os.Build.MODEL;
+	        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+				if(position != 6) {
+				        if(position == 0) {
+							fragment = FragmentHardware.newInstance();
+						} else if(position == 1) {
+							fragment = FragmentSensor.newInstance();
+						} else if(position == 2) {
+							fragment = FragmentScreen.newInstance();
+						} else if(position == 3) {
+							fragment = FragmentCamera.newInstance();
+						} else if(position == 4) {
+							fragment = FragmentFeature.newInstance();
+						} else if(position == 5) {
+							fragment = FragmentAppList.newInstance();
+						}
+					
+					if(!getSupportActionBar().isShowing())
+						getSupportActionBar().show();
+					FragmentManager fragmentManager = getSupportFragmentManager();
+					fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+					current_position = position;
+					onSectionAttached(position);	
+				} else {
+					finish();
 				}
-				
-				if(!getSupportActionBar().isShowing())
-					getSupportActionBar().show();
-				FragmentManager fragmentManager = getSupportFragmentManager();
-				fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
-				current_position = position;
-				onSectionAttached(position);
 			} else {
-				finish();
+				if(position != 7) {
+					if(position == 0) {
+						fragment = FragmentTesting.newInstance();
+					} else if(position == 1) {
+						fragment = FragmentHardware.newInstance();
+					} else if(position == 2) {
+						fragment = FragmentSensor.newInstance();
+					} else if(position == 3) {
+						fragment = FragmentScreen.newInstance();
+					} else if(position == 4) {
+						fragment = FragmentCamera.newInstance();
+					} else if(position == 5) {
+						fragment = FragmentFeature.newInstance();
+					} else if(position == 6) {
+						fragment = FragmentAppList.newInstance();
+					}
+				
+					if(!getSupportActionBar().isShowing())
+						getSupportActionBar().show();
+					FragmentManager fragmentManager = getSupportFragmentManager();
+					fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+					current_position = position;
+					onSectionAttached(position);	
+				} else {
+					finish();
+				}
 			}
 		}
 	}
 
 	public void onSectionAttached(int number) {
-		switch (number) {
-		case 0: mTitle = getString(R.string.menu_testing); break;
-		case 1: mTitle = getString(R.string.menu_hardware); break;
-		case 2: mTitle = getString(R.string.menu_sensor); break;
-		case 3: mTitle = getString(R.string.menu_screen); break;
-		case 4: mTitle = getString(R.string.menu_camera); break;
-		case 5: mTitle = getString(R.string.menu_features); break;
-		case 6: mTitle = getString(R.string.menu_applist); break;
-		case 7: mTitle = getString(R.string.menu_exit); break;
-		}
+
+		String model = android.os.Build.MODEL;
+        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+			switch (number) {
+			case 0: mTitle = getString(R.string.menu_hardware); break;
+			case 1: mTitle = getString(R.string.menu_sensor); break;
+			case 2: mTitle = getString(R.string.menu_screen); break;
+			case 3: mTitle = getString(R.string.menu_camera); break;
+			case 4: mTitle = getString(R.string.menu_features); break;
+			case 5: mTitle = getString(R.string.menu_applist); break;
+			case 6: mTitle = getString(R.string.menu_exit); break;
+			}
+        } else {
+			switch (number) {
+			case 0: mTitle = getString(R.string.menu_testing); break;
+			case 1: mTitle = getString(R.string.menu_hardware); break;
+			case 2: mTitle = getString(R.string.menu_sensor); break;
+			case 3: mTitle = getString(R.string.menu_screen); break;
+			case 4: mTitle = getString(R.string.menu_camera); break;
+			case 5: mTitle = getString(R.string.menu_features); break;
+			case 6: mTitle = getString(R.string.menu_applist); break;
+			case 7: mTitle = getString(R.string.menu_exit); break;
+			}
+        }
 	}
 
 	public void restoreActionBar() {
