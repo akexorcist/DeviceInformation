@@ -98,7 +98,7 @@ public class NavigationDrawerFragment extends Fragment {
         });
 
 		String model = android.os.Build.MODEL;
-        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+        if(model.contains("Nokia_X") || model.contains("Nokia_XL") || model.contains("NokiaX2")) {
 	        mDrawerListView.setAdapter(new ArrayAdapter<String>(
 	                getActionBar().getThemedContext(),
 	                R.layout.text_row_nav_drawer, R.id.text1,

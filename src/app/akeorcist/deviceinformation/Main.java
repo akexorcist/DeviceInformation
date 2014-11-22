@@ -25,7 +25,7 @@ public class Main extends ActionBarActivity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
 
 	private final String PREFERENCE_NAME = "Preference";
-	private final String KEYWORD_NAME = "isFirstRun130";
+	private final String KEYWORD_NAME = "isFirstRun131";
 	
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
@@ -42,7 +42,7 @@ public class Main extends ActionBarActivity implements
         ab.setBackgroundDrawable(new ColorDrawable(Color.parseColor(strColor)));
 
 		String model = android.os.Build.MODEL;
-        if(!model.contains("Nokia_X") || !model.contains("Nokia_XL")) {
+        if(!model.contains("Nokia_X") || !model.contains("Nokia_XL") || !model.contains("NokiaX2")) {
 	        SharedPreferences settings = getSharedPreferences(PREFERENCE_NAME, 0);
 		    boolean isFirstRun = settings.getBoolean(KEYWORD_NAME, true);
 		    if(isFirstRun) {
@@ -77,7 +77,7 @@ public class Main extends ActionBarActivity implements
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
 
-        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+        if(model.contains("Nokia_X") || model.contains("Nokia_XL") || model.contains("NokiaX2")) {
         	Fragment fragment = FragmentHardware.newInstance();
     		FragmentManager fragmentManager = getSupportFragmentManager();
     		fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
@@ -100,7 +100,7 @@ public class Main extends ActionBarActivity implements
 		Fragment fragment = null;
 		if(current_position != position) {
 			String model = android.os.Build.MODEL;
-	        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+	        if(model.contains("Nokia_X") || model.contains("Nokia_XL") || model.contains("NokiaX2")) {
 				if(position != 6) {
 				        if(position == 0) {
 							fragment = FragmentHardware.newInstance();
@@ -159,7 +159,7 @@ public class Main extends ActionBarActivity implements
 	public void onSectionAttached(int number) {
 
 		String model = android.os.Build.MODEL;
-        if(model.contains("Nokia_X") || model.contains("Nokia_XL")) {
+        if(model.contains("Nokia_X") || model.contains("Nokia_XL") || model.contains("NokiaX2")) {
 			switch (number) {
 			case 0: mTitle = getString(R.string.menu_hardware); break;
 			case 1: mTitle = getString(R.string.menu_sensor); break;

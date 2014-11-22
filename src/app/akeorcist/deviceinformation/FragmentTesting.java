@@ -61,7 +61,7 @@ import app.akeorcist.deviceinformation.InfoManager.CameraInfo;
 
 public class FragmentTesting extends Fragment {	
 	private final String PREFERENCE_NAME = "Preference";
-	private final String KEYWORD_NAME = "hasRunTesting130";
+	private final String KEYWORD_NAME = "hasRunTesting131";
 	
 	TextView textTesting;
 	Button buttonRunTesting;
@@ -162,6 +162,9 @@ public class FragmentTesting extends Fragment {
 						strWrite += "Manufacturer : " + Build.MANUFACTURER + "\n";
 						strWrite += "Model : " + Build.MODEL + "\n";
 						strWrite += "Product : " + Build.PRODUCT + "\n";
+						
+
+						try {
 						if(Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) { 
 			    			strWrite += "Radio : " + Build.RADIO + "\n";
 			    		} else {
@@ -169,16 +172,49 @@ public class FragmentTesting extends Fragment {
 			    			if(radio == null || radio.equals("")) 
 			    				radio = "unknown";
 			    			strWrite += "Radio : " + radio + "\n";
+			    		}} catch (Exception e) {
+			    			e.printStackTrace();
+			    			strWrite += "Radio : unknown\n";
 			    		}
+						
+						
+						try {
 			    		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) 
 			    			strWrite += "Serial : " + Build.SERIAL + "\n";
 			    		else 
-			    			strWrite += "Serial : Unknown\n";
-			    			
+			    			strWrite += "Serial : unknown\n";
+			    		} catch (Exception e) {
+			    			e.printStackTrace();
+			    			strWrite += "Serial : unknown\n";
+			    		}
+			    		
+			    		try {
 						strWrite += "Tags : " + Build.TAGS + "\n";
+			    		} catch (Exception e) {
+			    			e.printStackTrace();
+			    			strWrite += "Tags : unknown\n";
+			    		}
+			    		
+			    		try {
 						strWrite += "Time : " + Build.TIME + "\n";
+			    		} catch (Exception e) {
+			    			e.printStackTrace();
+			    			strWrite += "Time : unknown\n";
+			    		}
+			    		
+			    		try {
 						strWrite += "Type : " + Build.TYPE + "\n";
-						strWrite += "User : " + Build.USER;   		
+			    		} catch (Exception e) {
+			    			e.printStackTrace();
+			    			strWrite += "Type : unknown\n";
+			    		}
+			    		
+			    		try {
+						strWrite += "User : " + Build.USER;
+			    		} catch (Exception e) {
+			    			e.printStackTrace();
+			    			strWrite += "User : unknown\n";
+			    		}
 			    		
 			    		writeToFile(strWrite, "build_info.txt",  activity[0]);
 			    		

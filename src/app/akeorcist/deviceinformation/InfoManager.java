@@ -178,12 +178,8 @@ public class InfoManager {
 		}
 		
 		public static String hasGps(Activity activity) {
-			LocationManager manager = (LocationManager)activity.getSystemService(Context.LOCATION_SERVICE);
-			try {
-				if(manager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-					return "yes";
-			} catch (NullPointerException e) {
-				e.printStackTrace();
+			if(activity.getPackageManager().hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS)) {
+				return "yes";
 			}
 			return "no";
 		}
@@ -697,17 +693,22 @@ public class InfoManager {
 	@SuppressLint("NewApi")
 	public static class CameraInfo {		
 		public static String isAutoExposureLockSupported(Parameters params) {
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-				if(params.isAutoExposureLockSupported()) {
-					return "yes";
-				} else {
-					return "no";
+			try {
+				if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+					if(params.isAutoExposureLockSupported()) {
+						return "yes";
+					} else {
+						return "no";
+					}
 				}
+			} catch(Exception e) {
+				e.printStackTrace();
 			}
 			return "null";
 		}		
 		
 		public static String isAutoWhiteBalanceLockSupported(Parameters params) {
+			try {
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 				if(params.isAutoWhiteBalanceLockSupported()) {
 					return "yes";
@@ -715,18 +716,27 @@ public class InfoManager {
 					return "no";
 				}
 			}
+			} catch(Exception e){
+				e.printStackTrace();
+			}
 			return "null";
 		}		
 		
 		public static String isSmoothZoomSupported(Parameters params) {
+			try {
 			if(params.isSmoothZoomSupported()) {
 				return "yes";
 			} else {
 				return "no";
 			}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return "null";
 		}		
 		
 		public static String isVideoSnapshotSupported(Parameters params) {
+			try {
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 				if(params.isVideoSnapshotSupported()) {
 					return "yes";
@@ -734,10 +744,14 @@ public class InfoManager {
 					return "no";
 				}
 			}
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 			return "null";
 		}		
 		
 		public static String isVideoStabilizationSupported(Parameters params) {
+			try {
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
 				if(params.isVideoStabilizationSupported()) {
 					return "yes";
@@ -745,15 +759,23 @@ public class InfoManager {
 					return "no";
 				}
 			}
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 			return "null";
 		}		
 		
 		public static String isZoomSupported(Parameters params) {
+			try {
 			if(params.isZoomSupported()) {
 				return "yes";
 			} else {
 				return "no";
 			}
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			return "null";
 		}		
 		
 		public static String getSupportedAntibanding(Parameters params) {
